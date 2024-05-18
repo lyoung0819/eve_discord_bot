@@ -1,7 +1,7 @@
 import requests
 # API responses from ESI 
 
-# how to print War Details
+# How to print War Details
 class War: 
 
     def __init__(self, aggressor, declared, defender, finished):
@@ -57,10 +57,11 @@ class EveAPI:
         
 # Get corporation structures: GET ||  /corporations/{corporation_id}/structures/
     def getStarbases(self, corp_id):
-        request_url = self.base_url + '/corporations/' + corp_id + '/starbases/'
+        request_url = self.base_url + '/corporations/' + corp_id + '/structures/'
         response = requests.get(request_url)
         if response.ok:
             data = response.json()
+            print(data)
             return data
         else:
             return 'Error'
@@ -77,7 +78,9 @@ class EveAPI:
         else:
             return 'Error'
 
-  
+
+
+# >>>> TESTER DRVIER CODE: 
 def mainWarTest():
     client = EveAPI()
     while True:
@@ -86,6 +89,5 @@ def mainWarTest():
             break
         war = client.getWarInfo(war_id)
         print(war)
-
 
 mainWarTest()

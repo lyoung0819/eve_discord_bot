@@ -1,5 +1,8 @@
+# ESI API WRAPPER 
+
+
 import requests
-# API responses from ESI 
+
 
 # How to print War Details
 class War: 
@@ -18,7 +21,7 @@ class War:
         War Finished On: {self.finished}
         '''
 
-
+# API WRAPPER
 class EveAPI:
     base_url = 'https://esi.evetech.net/latest'
 
